@@ -28,12 +28,16 @@ Variables
   --clr-grey-10: #0f172a;
   --black: #222;
   --white: #fff;
-  --radius: 0.25rem;
+  --radius: 0.75rem;
   --spacing: 1px;
   --transition: all 0.3s linear;
   /* font */
   --bodyFont: "Exo 2", sans-serif;
+  /* shadow */
+  --shadow-light: rgba(0, 0, 0, 0.65) -5px 8px 10px;
+  --shadow-dark: rgba(0, 0, 0, 0.9) 0px 10px 15px;
 }
+
 /*
 ===============
 Global Styles
@@ -112,4 +116,61 @@ img {
   width: 100%;
   display: block;
   object-fit: cover;
+}
+
+/*
+===============
+App Home Page
+===============
+*/
+#main {
+  padding: 2rem 2.5rem;
+  max-width: 568px;
+  width: 80vw;
+  margin: 0 auto;
+  background-color: var(--clr-primary-1);
+  display: flex;
+  gap: 1rem;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-dark);
+}
+
+#main .chat-logo {
+  width: 40%;
+  height: 50%;
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+#main .chat-intro {
+  padding: 1.25rem;
+}
+
+#main .chat-intro .chat-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: -2rem;
+  color: var(--clr-primary-4);
+  font-weight: bold;
+}
+
+#main .chat-intro p {
+  font-size: 1.2rem;
+  text-align: justify;
+  color: var(--white);
+}
+
+#main .register-login p {
+  color: var(--clr-grey-4);
+  font-size: 1rem;
+}
+
+#main .register-login a {
+  color: var(--white);
+  text-decoration: underline;
+  font-weight: 700;
 }
