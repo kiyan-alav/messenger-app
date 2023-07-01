@@ -123,7 +123,7 @@ img {
 App Home Page
 ===============
 */
-#main {
+#home {
   padding: 2rem 2.5rem;
   max-width: 568px;
   width: 80vw;
@@ -139,18 +139,18 @@ App Home Page
   box-shadow: var(--shadow-dark);
 }
 
-#main .chat-logo {
+#home .chat-logo {
   width: 40%;
   height: 50%;
   overflow: hidden;
   border-radius: 50%;
 }
 
-#main .chat-intro {
+#home .chat-intro {
   padding: 1.25rem;
 }
 
-#main .chat-intro .chat-title {
+#home .chat-intro .chat-title {
   font-size: 3rem;
   text-align: center;
   margin-top: -2rem;
@@ -158,19 +158,108 @@ App Home Page
   font-weight: bold;
 }
 
-#main .chat-intro p {
+#home .chat-intro p {
   font-size: 1.2rem;
   text-align: justify;
   color: var(--white);
 }
 
-#main .register-login p {
+#home .register-login p {
   color: var(--clr-grey-4);
   font-size: 1rem;
 }
 
-#main .register-login a {
+#home .register-login a {
   color: var(--white);
   text-decoration: underline;
+  font-weight: 700;
+}
+
+/*
+===============
+Register Page
+===============
+*/
+#register {
+  padding: 2rem 2.5rem;
+  max-width: 568px;
+  width: 80vw;
+  margin: 0 auto;
+  background-color: var(--clr-primary-1);
+  margin-top: 5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-dark);
+}
+
+#register .chat-logo {
+  width: 40%;
+  height: 50%;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+#register .chat-intro {
+  padding: 1.25rem;
+}
+
+#register .chat-intro .chat-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: -2rem;
+  color: var(--clr-primary-4);
+  font-weight: bold;
+}
+
+#register .register-form input {
+  padding-bottom: 0.75rem;
+  font-size: 1.25rem;
+  color: var(--white);
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--clr-grey-1);
+}
+
+#register .register-form input::placeholder {
+  color: var(--white);
+}
+
+#register .register-form input:not(input[type="radio"]) {
+  display: block;
+  width: 90%;
+  margin: 0.5rem auto;
+}
+
+#register .register-form .gender-box {
+  color: var(--white);
+  width: 90%;
+  margin: 0.75rem auto;
+  display: flex;
+  gap: 0.5rem;
+}
+
+#register .register-form .gender-box .male,
+#register .register-form .gender-box .female {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+#register .register-form .sign-up {
+  display: block;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--white);
+  width: 35%;
+  margin: 1rem auto;
+  transition: var(--transition);
+  background-color: transparent;
+  color: var(--white);
+  cursor: pointer;
+}
+
+#register .register-form .sign-up:hover {
+  background-color: var(--white);
+  color: var(--clr-primary-1);
   font-weight: 700;
 }

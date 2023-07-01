@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phoenix Chat App - Register</title>
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body>
+    <main id="register">
+      <div class="chat-logo">
+        <img src="./img/phoenix.svg" alt="logo" />
+      </div>
+      <div class="chat-intro">
+        <h2 class="chat-title">Phoenix</h2>
+      </div>
+      <div class="register-form">
+        <form action="">
+          <input
+            type="text"
+            placeholder="First Name"
+            name="first-name"
+            id="first-name"
+            autofocus
+          />
+          <input
+            type="text"
+            placeholder="Last Name"
+            name="last-name"
+            id="last-name"
+          />
+          <input type="email" placeholder="Email" name="email" id="email" />
+          <input
+            type="password"
+            placeholder="Password"
+            name="password"
+            id="password"
+          />
+          <input
+            type="password"
+            placeholder="Confirm Password"
+            name="confirm-password"
+            id="confirm-password"
+          />
+          <input
+            type="text"
+            placeholder="Country"
+            name="country"
+            id="country"
+          />
+          <input
+            type="tel"
+            placeholder="Cell Phone"
+            name="cell-phone"
+            id="cell-phone"
+            pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}"
+          />
+          <div class="gender-box">
+            <div class="male">
+              <label for="male">Male</label>
+              <input type="radio" name="gender" id="male" />
+            </div>
+            <div class="female">
+              <label for="female">Female</label>
+              <input type="radio" name="gender" id="female" />
+            </div>
+          </div>
+          <button type="submit" class="sign-up">Sign Up</button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
