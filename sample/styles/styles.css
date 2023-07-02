@@ -263,3 +263,81 @@ Register Page
   color: var(--clr-primary-1);
   font-weight: 700;
 }
+
+/*
+===============
+Login Page
+===============
+*/
+#login {
+  padding: 2rem 2.5rem;
+  max-width: 568px;
+  width: 80vw;
+  margin: 0 auto;
+  background-color: var(--clr-primary-1);
+  margin-top: 5rem;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-dark);
+}
+
+#login .chat-logo {
+  width: 40%;
+  height: 50%;
+  overflow: hidden;
+  border-radius: 50%;
+  margin: 0 auto;
+}
+
+#login .chat-intro {
+  padding: 1.25rem;
+}
+
+#login .chat-intro .chat-title {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: -2rem;
+  color: var(--clr-primary-4);
+  font-weight: bold;
+}
+
+#login .login-form input {
+  padding-bottom: 0.75rem;
+  font-size: 1.25rem;
+  color: var(--white);
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--clr-grey-1);
+
+  display: block;
+  width: 90%;
+  margin: 0.5rem auto;
+}
+
+#login .login-form input::placeholder {
+  color: var(--white);
+}
+
+/* #login .login-form input {
+  display: block;
+  width: 90%;
+  margin: 0.5rem auto;
+} */
+
+#login .login-form .login {
+  display: block;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--white);
+  width: 35%;
+  margin: 1rem auto;
+  transition: var(--transition);
+  background-color: transparent;
+  color: var(--white);
+  cursor: pointer;
+}
+
+#login .login-form .login:hover {
+  background-color: var(--white);
+  color: var(--clr-primary-1);
+  font-weight: 700;
+}
