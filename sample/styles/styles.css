@@ -318,12 +318,6 @@ Login Page
   color: var(--white);
 }
 
-/* #login .login-form input {
-  display: block;
-  width: 90%;
-  margin: 0.5rem auto;
-} */
-
 #login .login-form .login {
   display: block;
   padding: 0.5rem 1.25rem;
@@ -341,3 +335,9 @@ Login Page
   color: var(--clr-primary-1);
   font-weight: 700;
 }
+
+/*
+===============
+User Chat Page
+===============
+*/
