@@ -65,7 +65,6 @@ body {
 }
 
 p {
-  margin-bottom: 1.5rem;
   max-width: 40em;
 }
 
@@ -75,7 +74,6 @@ h3,
 h4,
 h5 {
   margin: 0;
-  margin-bottom: 1.28rem;
   font-family: var(--headingFonts);
   text-transform: capitalize;
   font-weight: 400;
@@ -341,3 +339,91 @@ Login Page
 User Chat Page
 ===============
 */
+#chat {
+  padding: 2rem 2.5rem;
+  max-width: 100%;
+  width: 95vw;
+  height: calc(100vh - 4rem);
+  margin: 2rem auto;
+  background-color: var(--clr-primary-1);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-dark);
+  overflow-y: scroll;
+  /* display: flex;
+  flex-wrap: wrap; */
+}
+
+#chat .users-list {
+  /* flex: 1 0 33%; */
+}
+
+#chat .users-list h2 {
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+#chat .users-list .search-box {
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid var(--clr-primary-3);
+  border-radius: var(--radius);
+}
+
+#chat .users-list .search-box .search-bar input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--white);
+  font-size: 1rem;
+}
+
+#chat .users-list .search-box .search-bar input::placeholder {
+  color: var(--white);
+  font-size: 1rem;
+}
+
+#chat .users-list .search-box .search-icon {
+  color: var(--white);
+  font-size: 1.25rem;
+}
+
+#chat .users-list h3 {
+  font-size: 1.25rem;
+  color: var(--white);
+  margin-top: 1rem;
+}
+
+#chat .users-list .recent-user {
+  margin-top: 1.25rem;
+  background-color: var(--clr-primary-2);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: space-between;
+}
+
+#chat .users-list .recent-user .user-infos {
+  display: flex;
+  gap: 1rem;
+}
+
+#chat .users-list .recent-user .user-infos .user-profile {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+}
+
+#chat .users-list .recent-user .user-infos .user-info {
+  color: var(--white);
+}
+
+#chat .users-list .recent-user .time {
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: 700;
+  align-self: center;
+}
