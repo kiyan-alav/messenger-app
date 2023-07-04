@@ -116,6 +116,14 @@ img {
   object-fit: cover;
 }
 
+.divider {
+  width: 100%;
+  height: 5px;
+  margin: 1rem auto;
+  border-radius: var(--radius);
+  background-color: var(--clr-primary-2);
+}
+
 /*
 ===============
 App Home Page
@@ -426,4 +434,156 @@ User Chat Page
   font-size: 1.25rem;
   font-weight: 700;
   align-self: center;
+}
+
+#chat .chat-content {
+  /* background-color: red; */
+}
+
+#chat .chat-content .top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--clr-primary-3);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+}
+
+#chat .chat-content .top-bar .user-infos {
+  display: flex;
+  gap: 1rem;
+}
+
+#chat .chat-content .top-bar .user-infos .user-profile {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+}
+
+#chat .chat-content .top-bar .user-infos .user-info {
+  color: var(--white);
+}
+
+#chat .chat-content .top-bar .user-infos .user-info p {
+  color: var(--clr-grey-5);
+}
+
+#chat .chat-content .top-bar .chat-icon {
+  font-size: 1.25rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+#chat .chat-content .top-bar .chat-icon button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: var(--white);
+}
+
+#chat .chat-content .user-chats {
+  padding: 1rem;
+  height: calc(100vh - 4rem);
+  margin: 1rem 0;
+  overflow-y: scroll;
+}
+
+#chat .chat-content .user-chats .user-profile {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+}
+
+#chat .chat-content .user-chats .message-box {
+  max-width: 70%;
+  background-color: var(--clr-primary-4);
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+#chat .chat-content .user-chats .message-box .message {
+  color: var(--white);
+  font-size: 1rem;
+}
+
+#chat .chat-content .user-chats .message-box .time {
+  color: var(--clr-grey-3);
+}
+
+#chat .chat-content .user-chats .owner-side,
+#chat .chat-content .user-chats .opposite-side {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+#chat .chat-content .user-chats .owner-side {
+  flex-direction: row-reverse;
+}
+
+#chat .chat-content .user-chats .owner-side .message-box {
+  border-radius: 10px 0 10px 10px;
+}
+
+#chat .chat-content .user-chats .opposite-side {
+  flex-direction: row;
+}
+
+#chat .chat-content .user-chats .opposite-side .message-box {
+  border-radius: 0 10px 10px 10px;
+}
+
+#chat .chat-content .input-box {
+  background-color: var(--clr-primary-3);
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: var(--radius);
+}
+
+#chat .chat-content .input-box .meesage-icon {
+  color: var(--clr-grey-3);
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+}
+
+#chat .chat-content .input-box form {
+  /* background-color: red; */
+  flex-grow: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+#chat .chat-content .input-box form input {
+  display: block;
+  width: 88%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  color: var(--white);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+#chat .chat-content .input-box form input::placeholder {
+  color: var(--white);
+  font-size: 1rem;
+}
+
+#chat .chat-content .input-box form button {
+  display: block;
+  width: 10%;
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--white);
+  cursor: pointer;
 }
