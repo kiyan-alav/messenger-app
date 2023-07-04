@@ -438,6 +438,13 @@ User Chat Page
 
 #chat .chat-content {
   /* background-color: red; */
+  margin: 2.5rem 0;
+}
+
+#chat .chat-content h3 {
+  font-size: 1.25rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
 }
 
 #chat .chat-content .top-bar {
