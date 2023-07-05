@@ -507,7 +507,7 @@ User Chat Page
 #chat .chat-content .top-bar .chat-icon {
   font-size: 1.25rem;
   display: flex;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
 #chat .chat-content .top-bar .chat-icon button {
@@ -515,6 +515,11 @@ User Chat Page
   background-color: transparent;
   border: none;
   color: var(--white);
+  transition: var(--transition);
+}
+
+#chat .chat-content .top-bar .chat-icon button:hover {
+  rotate: -45deg 0 0;
 }
 
 #chat .chat-content .user-chats {
