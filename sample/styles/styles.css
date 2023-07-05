@@ -481,7 +481,27 @@ User Chat Page
 }
 
 #chat .chat-content .top-bar .user-infos .user-info p {
-  color: var(--clr-grey-5);
+  color: var(--clr-grey-3);
+  font-weight: 700;
+}
+
+#chat .chat-content .top-bar .back {
+  display: block;
+  background-color: transparent;
+  border: none;
+  color: var(--white);
+  font-size: 1.25rem;
+  cursor: pointer;
+  border: 1px solid var(--white);
+  width: 6rem;
+  border-radius: var(--radius);
+  padding: 0.25rem 0.5rem;
+  transition: var(--transition);
+}
+
+#chat .chat-content .top-bar .back:hover {
+  background-color: var(--white);
+  color: var(--clr-grey-10);
 }
 
 #chat .chat-content .top-bar .chat-icon {
