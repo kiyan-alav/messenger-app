@@ -412,6 +412,15 @@ User Chat Page
   border-radius: var(--radius);
   display: flex;
   justify-content: space-between;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: var(--transition);
+}
+
+#chat .users-list .recent-user:hover {
+  scale: 1.1;
+  border: 3px solid var(--clr-primary-2);
+  background-color: transparent;
 }
 
 #chat .users-list .recent-user .user-infos {
