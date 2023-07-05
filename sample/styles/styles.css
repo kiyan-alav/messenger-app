@@ -459,6 +459,15 @@ User Chat Page
     padding-right: 2rem;
   }
 
+  #chat .users-list .recent-users-section {
+    overflow-y: scroll;
+    height: calc(100vh - -1rem);
+  }
+
+  #chat .users-list .recent-user.test {
+    background-color: red;
+  }
+
   #chat .users-list .recent-user {
     padding: 0.5rem 1rem;
   }
@@ -491,6 +500,7 @@ User Chat Page
 @media screen and (min-width: 1200px) {
   #chat .users-list {
     flex: 1;
+    margin-top: 1rem;
   }
 
   #chat .users-list .recent-user:hover {
@@ -498,8 +508,11 @@ User Chat Page
   }
 
   #chat .users-list .recent-users-section {
-    overflow-y: scroll;
-    /* background-color: red; */
+    height: calc(100vh - 17rem);
+  }
+
+  #chat .users-list .recent-user.test {
+    background-color: red;
   }
 }
 
@@ -715,6 +728,7 @@ User Chat Page
     border-right: 2px solid var(--clr-grey-10);
     padding-right: 2rem;
     height: calc(100vh - 7rem);
+    margin-top: 1rem;
   }
 
   #chat .chat-content .user-chats {
@@ -781,7 +795,8 @@ User Chat Page
 @media screen and (min-width: 1200px) {
   #chat .user-profile-section {
     flex: 1;
-    overflow-y: scroll;
+    height: calc(100vh - 7rem);
+    margin-top: 1rem;
   }
 
   #chat .user-profile-section .main-information .user-profile {
