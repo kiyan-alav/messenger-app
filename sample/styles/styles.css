@@ -367,6 +367,12 @@ User Chat Page
   }
 }
 
+@media screen and (min-width: 1200px) {
+  #chat {
+    overflow-y: hidden;
+  }
+}
+
 #chat .users-list h2 {
   color: var(--white);
   font-weight: bold;
@@ -485,6 +491,15 @@ User Chat Page
 @media screen and (min-width: 1200px) {
   #chat .users-list {
     flex: 1;
+  }
+
+  #chat .users-list .recent-user:hover {
+    scale: 0.9;
+  }
+
+  #chat .users-list .recent-users-section {
+    overflow-y: scroll;
+    /* background-color: red; */
   }
 }
 
@@ -699,6 +714,11 @@ User Chat Page
     flex: 3;
     border-right: 2px solid var(--clr-grey-10);
     padding-right: 2rem;
+    height: calc(100vh - 7rem);
+  }
+
+  #chat .chat-content .user-chats {
+    height: calc(100vh - 23rem);
   }
 }
 
@@ -761,6 +781,7 @@ User Chat Page
 @media screen and (min-width: 1200px) {
   #chat .user-profile-section {
     flex: 1;
+    overflow-y: scroll;
   }
 
   #chat .user-profile-section .main-information .user-profile {
