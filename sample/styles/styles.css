@@ -586,12 +586,18 @@ User Chat Page
   border-radius: var(--radius);
 }
 
-#chat .chat-content .input-box .meesage-icon {
+#chat .chat-content .input-box .message-icon {
   color: var(--clr-grey-3);
   font-size: 1.2rem;
   cursor: pointer;
   background-color: transparent;
   border: none;
+  transition: var(--transition);
+}
+
+#chat .chat-content .input-box .message-icon:hover {
+  scale: 1.5;
+  rotate: 90deg 0 0;
 }
 
 #chat .chat-content .input-box form {
@@ -627,6 +633,12 @@ User Chat Page
   font-size: 1.2rem;
   color: var(--white);
   cursor: pointer;
+  transition: var(--transition);
+}
+
+#chat .chat-content .input-box form button:hover {
+  scale: 1.5;
+  rotate: 45deg 0 0;
 }
 
 #chat .user-profile-section {
