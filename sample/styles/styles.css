@@ -594,3 +594,54 @@ User Chat Page
   color: var(--white);
   cursor: pointer;
 }
+
+#chat .user-profile-section {
+  background-color: var(--clr-primary-3);
+  border-radius: var(--radius);
+  padding: 1rem 2rem;
+}
+
+#chat .user-profile-section .main-information {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#chat .user-profile-section .main-information .user-profile {
+  width: 8rem;
+  background-color: red;
+  border-radius: 50%;
+}
+
+#chat .user-profile-section .main-information .full-name {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+#chat .user-profile-section .other-information {
+  margin-top: 1.5rem;
+}
+
+#chat .user-profile-section .other-information h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+#chat .user-profile-section .other-information .info:not(:last-child) {
+  border-bottom: 1px solid var(--clr-grey-8);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+#chat .user-profile-section .other-information .info h4 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--clr-grey-10);
+}
+
+#chat .user-profile-section .other-information .info p {
+  color: var(--white);
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+}
