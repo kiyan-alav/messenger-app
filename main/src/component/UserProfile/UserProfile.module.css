@@ -1,0 +1,71 @@
+.userProfileSection {
+  background-color: var(--clr-primary-3);
+  border-radius: var(--radius);
+  padding: 1rem 2rem;
+}
+
+.userProfileSection .mainInformation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.userProfileSection .mainInformation .userProfile {
+  width: 8rem;
+  border-radius: 50%;
+}
+
+.userProfileSection .mainInformation .fullName {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.userProfileSection .otherInformation {
+  margin-top: 1.5rem;
+}
+
+.userProfileSection .otherInformation h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.userProfileSection .otherInformation .info:not(:last-child) {
+  border-bottom: 1px solid var(--clr-grey-8);
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.userProfileSection .otherInformation .info h4 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--clr-grey-10);
+}
+
+.userProfileSection .otherInformation .info p {
+  color: var(--white);
+  font-size: 1.15rem;
+  letter-spacing: 1px;
+}
+
+@media screen and (min-width: 992px) {
+  .userProfileSection {
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .userProfileSection {
+    flex: 1;
+    height: calc(100vh - 8rem);
+    margin-top: 1rem;
+  }
+
+  .userProfileSection .mainInformation .userProfile {
+    width: 5rem;
+  }
+
+  .userProfileSection .otherInformation h3 {
+    font-size: 1.25rem;
+  }
+}
