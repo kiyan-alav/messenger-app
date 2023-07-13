@@ -1,11 +1,11 @@
 import React from "react";
 import ChatLogo from "../ChatLogo/ChatLogo";
 import ChatIntro from "../ChatIntro/ChatIntro";
-import "./Form.css";
+import styles from "./Form.module.css";
 
 export default function Form(props) {
   return (
-    <main>
+    <main className={styles.main}>
       <ChatLogo />
       <ChatIntro />
       <div>
