@@ -1,8 +1,7 @@
 import React from "react";
-import "./Form.css";
-
 import ChatLogo from "../ChatLogo/ChatLogo";
 import ChatIntro from "../ChatIntro/ChatIntro";
+import "./Form.css";
 
 export default function Form(props) {
   return (
