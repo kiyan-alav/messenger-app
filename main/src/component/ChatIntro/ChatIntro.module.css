@@ -1,0 +1,11 @@
+.chatIntro {
+  padding: 1.25rem;
+}
+
+.chatIntro .chatTitle {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: -2rem;
+  color: var(--clr-primary-4);
+  font-weight: bold;
+}
