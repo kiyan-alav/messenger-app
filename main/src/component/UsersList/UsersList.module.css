@@ -1,0 +1,62 @@
+.usersList h2 {
+  color: var(--white);
+  font-weight: bold;
+  font-size: 1.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.usersList .searchBox {
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 2px solid var(--clr-primary-3);
+  border-radius: var(--radius);
+}
+
+.usersList .searchBox .searchBar input {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.usersList .searchBox .searchBar input::placeholder {
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.usersList .searchBox .searchIcon {
+  color: var(--white);
+  font-size: 1.25rem;
+}
+
+.usersList h3 {
+  font-size: 1.25rem;
+  color: var(--white);
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 992px) {
+  .usersList {
+    border-right: 2px solid var(--clr-grey-10);
+    padding-right: 2rem;
+  }
+
+  .usersList .recentUsersSection {
+    overflow-y: scroll;
+    height: calc(100vh - -1rem);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .usersList {
+    flex: 1;
+    margin-top: 1rem;
+  }
+
+  .usersList .recentUsersSection {
+    height: calc(100vh - 19rem);
+  }
+}
