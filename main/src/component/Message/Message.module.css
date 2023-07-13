@@ -1,0 +1,47 @@
+.userProfile {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+}
+
+.messageBox {
+  max-width: 70%;
+  background-color: var(--clr-primary-4);
+  display: flex;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  gap: 1rem;
+  margin: 0.5rem 0;
+}
+
+.messageBox .message {
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.messageBox .time {
+  color: var(--clr-grey-3);
+}
+
+.ownerSide,
+.oppositeSide {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.ownerSide {
+  flex-direction: row-reverse;
+}
+
+.ownerSide .messageBox {
+  border-radius: 10px 0 10px 10px;
+}
+
+.oppositeSide {
+  flex-direction: row;
+}
+
+.oppositeSide .messageBox {
+  border-radius: 0 10px 10px 10px;
+}
