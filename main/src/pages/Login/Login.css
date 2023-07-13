@@ -1,0 +1,35 @@
+input {
+  padding-bottom: 0.75rem;
+  font-size: 1.25rem;
+  color: var(--white);
+  outline: none;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid var(--clr-grey-1);
+
+  display: block;
+  width: 90%;
+  margin: 0.5rem auto;
+}
+
+input::placeholder {
+  color: var(--white);
+}
+
+button {
+  display: block;
+  padding: 0.5rem 1.25rem;
+  border: 1px solid var(--white);
+  width: 35%;
+  margin: 1rem auto;
+  transition: var(--transition);
+  background-color: transparent;
+  color: var(--white);
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: var(--white);
+  color: var(--clr-primary-1);
+  font-weight: 700;
+}
