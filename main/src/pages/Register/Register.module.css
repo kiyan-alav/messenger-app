@@ -3,7 +3,7 @@
 Register Page
 ===============
 */
-input {
+.registerInput {
   padding-bottom: 0.75rem;
   font-size: 1.25rem;
   color: var(--white);
@@ -13,17 +13,17 @@ input {
   border-bottom: 1px solid var(--clr-grey-1);
 }
 
-input::placeholder {
+.registerInput::placeholder {
   color: var(--white);
 }
 
-input:not(input[type="radio"]) {
+.registerInput:not(input[type="radio"]) {
   display: block;
   width: 90%;
   margin: 0.5rem auto;
 }
 
-.gender-box {
+.genderBox {
   color: var(--white);
   width: 90%;
   margin: 0.75rem auto;
@@ -31,14 +31,14 @@ input:not(input[type="radio"]) {
   gap: 0.5rem;
 }
 
-.gender-box .male,
-.gender-box .female {
+.genderBox .male,
+.genderBox .female {
   display: flex;
   align-items: center;
   gap: 0.5rem;
 }
 
-button {
+.signUp {
   display: block;
   padding: 0.5rem 1.25rem;
   border: 1px solid var(--white);
@@ -50,7 +50,7 @@ button {
   cursor: pointer;
 }
 
-#register .register-form button:hover {
+.signUp:hover {
   background-color: var(--white);
   color: var(--clr-primary-1);
   font-weight: 700;
