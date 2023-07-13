@@ -1,0 +1,83 @@
+.recentUser {
+  margin-top: 1.25rem;
+  background-color: var(--clr-primary-2);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius);
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  border: 3px solid transparent;
+  transition: var(--transition);
+}
+
+.recentUser:hover {
+  scale: 1.1;
+  border: 3px solid var(--clr-primary-2);
+  background-color: transparent;
+}
+
+.recentUser .userInfos {
+  display: flex;
+  gap: 1rem;
+}
+
+.recentUser .userInfos .userProfile {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+}
+
+.recentUser .userInfos .userInfo {
+  color: var(--white);
+}
+
+.recentUser .time {
+  color: var(--white);
+  font-size: 1.25rem;
+  font-weight: 700;
+  align-self: center;
+}
+
+@media screen and (min-width: 992px) {
+  .recentUser.test {
+    background-color: red;
+  }
+
+  .recentUser {
+    padding: 0.5rem 1rem;
+  }
+
+  .recentUser .userInfos {
+    gap: 0.5rem !important;
+    align-items: center;
+  }
+
+  .recentUser .userInfos .userInfo {
+    color: var(--white);
+  }
+
+  .recentUser .userInfos .userInfo h5 {
+    font-size: 1rem;
+  }
+
+  .recentUser .userInfos .userInfo p {
+    font-size: 0.75rem;
+  }
+
+  .recentUser .time {
+    color: var(--white);
+    font-size: 1rem !important;
+    font-weight: 700;
+    align-self: center;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .recentUser:hover {
+    scale: 0.9;
+  }
+
+  .recentUser.test {
+    background-color: red;
+  }
+}
