@@ -3,7 +3,7 @@
 App Home Page
 ===============
 */
-#home {
+.home {
   padding: 2rem 2.5rem;
   max-width: 568px;
   width: 80vw;
@@ -19,37 +19,18 @@ App Home Page
   box-shadow: var(--shadow-dark);
 }
 
-#home .chatLogo {
-  width: 40%;
-  height: 50%;
-  overflow: hidden;
-  border-radius: 50%;
-}
-
-#home .chatIntro {
-  padding: 1.25rem;
-}
-
-#home .chatIntro .chatTitle {
-  font-size: 3rem;
-  text-align: center;
-  margin-top: -2rem;
-  color: var(--clr-primary-4);
-  font-weight: bold;
-}
-
-#home .chatIntro p {
+.home .chatIntroText {
   font-size: 1.2rem;
   text-align: justify;
   color: var(--white);
 }
 
-#home .registerLogin p {
+.home .registerLogin p {
   color: var(--clr-grey-4);
   font-size: 1rem;
 }
 
-#home .registerLogin a {
+.home .registerLogin a {
   color: var(--white);
   text-decoration: underline;
   font-weight: 700;
