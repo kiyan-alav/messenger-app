@@ -1,0 +1,171 @@
+.chatContent {
+  margin: 2.5rem 0;
+}
+
+.chatContent h3 {
+  font-size: 1.25rem;
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
+.chatContent .topBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: var(--clr-primary-3);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius);
+}
+
+.chatContent .topBar .userInfos {
+  display: flex;
+  gap: 1rem;
+}
+
+.chatContent .topBar .userInfos .userProfile {
+  width: 3.5rem;
+  height: 3.5rem;
+  border-radius: 50%;
+}
+
+.chatContent .topBar .userInfos .userInfo {
+  color: var(--white);
+}
+
+.chatContent .topBar .userInfos .userInfo p {
+  color: var(--clr-grey-3);
+  font-weight: 700;
+}
+
+.chatContent .topBar .back {
+  display: block;
+  background-color: transparent;
+  border: none;
+  color: var(--white);
+  font-size: 1.25rem;
+  cursor: pointer;
+  border: 1px solid var(--white);
+  width: 6rem;
+  border-radius: var(--radius);
+  padding: 0.25rem 0.5rem;
+  transition: var(--transition);
+}
+
+.chatContent .topBar .back:hover {
+  background-color: var(--white);
+  color: var(--clr-grey-10);
+}
+
+.chatContent .topBar .chatIcon {
+  font-size: 1.25rem;
+  display: flex;
+  gap: 1rem;
+}
+
+.chatContent .topBar .chatIcon button {
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: var(--white);
+  transition: var(--transition);
+}
+
+.chatContent .topBar .chatIcon button:hover {
+  rotate: -45deg 0 0;
+}
+
+.chatContent .userChats {
+  padding: 1rem;
+  height: calc(100vh - 4rem);
+  margin: 1rem 0;
+  overflow-y: scroll;
+}
+
+.chatContent .inputBox {
+  background-color: var(--clr-primary-3);
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-radius: var(--radius);
+}
+
+.chatContent .inputBox .messageIcon {
+  color: var(--clr-grey-3);
+  font-size: 1.2rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  transition: var(--transition);
+}
+
+.chatContent .inputBox .messageIcon:hover {
+  scale: 1.5;
+  rotate: 90deg 0 0;
+}
+
+.chatContent .inputBox .messageForm {
+  flex-grow: 2;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+}
+
+.chatContent .inputBox .messageForm .messageInput {
+  display: block;
+  width: 88%;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  padding: 1rem;
+  color: var(--white);
+  font-size: 1rem;
+  transition: var(--transition);
+}
+
+.chatContent .inputBox .messageForm .messageInput::placeholder {
+  color: var(--white);
+  font-size: 1rem;
+}
+
+.chatContent .inputBox .messageForm .send {
+  display: block;
+  width: 10%;
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: var(--white);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.chatContent .inputBox .messageForm .send:hover {
+  scale: 1.5;
+  rotate: 45deg 0 0;
+}
+
+@media screen and (min-width: 992px) {
+  .chatContent {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    flex: 2;
+  }
+
+  .chatContent .topBar {
+    margin-top: 29px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .chatContent {
+    flex: 3;
+    border-right: 2px solid var(--clr-grey-10);
+    padding-right: 2rem;
+    height: calc(100vh - 7rem);
+    margin-top: 1rem;
+  }
+
+  .chatContent .userChats {
+    height: calc(100vh - 23rem);
+  }
+}
