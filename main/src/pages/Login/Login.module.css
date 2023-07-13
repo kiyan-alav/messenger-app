@@ -1,4 +1,4 @@
-input {
+.loginInput {
   padding-bottom: 0.75rem;
   font-size: 1.25rem;
   color: var(--white);
@@ -12,11 +12,11 @@ input {
   margin: 0.5rem auto;
 }
 
-input::placeholder {
+.loginInput::placeholder {
   color: var(--white);
 }
 
-button {
+.login {
   display: block;
   padding: 0.5rem 1.25rem;
   border: 1px solid var(--white);
@@ -28,7 +28,7 @@ button {
   cursor: pointer;
 }
 
-button:hover {
+.login:hover {
   background-color: var(--white);
   color: var(--clr-primary-1);
   font-weight: 700;
