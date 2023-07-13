@@ -1,6 +1,6 @@
 import React from "react";
-import ChatLogo from "./../ChatLogo/ChatLogo";
-import ChatIntro from "./../ChatIntro/ChatIntro";
+import ChatLogo from "./../../component/ChatLogo/ChatLogo";
+import ChatIntro from "./../../component/ChatIntro/ChatIntro";
 
 import styles from "./Home.module.css";
 
