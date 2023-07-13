@@ -1,0 +1,481 @@
+import React from "react";
+import styles from "./Chat.module.css";
+
+export default function Chat() {
+  return (
+    <main class="chat">
+      <section class="users-list">
+        <h2>Chats List</h2>
+        <form action="" class="search-box">
+          <div class="search-bar">
+            <input
+              type="text"
+              name="search"
+              id="search"
+              placeholder="Search For Users..."
+            />
+          </div>
+          <div class="search-icon">
+            <i class="fas fa-search"></i>
+          </div>
+        </form>
+        <h3>Recent Chats</h3>
+        <section class="recent-users-section">
+          <article class="recent-user">
+            <div class="user-infos">
+              <div class="user-profile">
+                <img src="./img/user-profile.png" alt="" />
+              </div>
+              <div class="user-info">
+                <h5>Kiyan Alavi</h5>
+                <p>Salam Khubi?</p>
+              </div>
+            </div>
+            <div class="time">13:34</div>
+          </article>
+          <article class="recent-user">
+            <div class="user-infos">
+              <div class="user-profile">
+                <img src="./img/user-profile.png" alt="" />
+              </div>
+              <div class="user-info">
+                <h5>Kiyan Alavi</h5>
+                <p>Salam Khubi?</p>
+              </div>
+            </div>
+            <div class="time">13:34</div>
+          </article>
+          <article class="recent-user">
+            <div class="user-infos">
+              <div class="user-profile">
+                <img src="./img/user-profile.png" alt="" />
+              </div>
+              <div class="user-info">
+                <h5>Kiyan Alavi</h5>
+                <p>Salam Khubi?</p>
+              </div>
+            </div>
+            <div class="time">13:34</div>
+          </article>
+          <article class="recent-user">
+            <div class="user-infos">
+              <div class="user-profile">
+                <img src="./img/user-profile.png" alt="" />
+              </div>
+              <div class="user-info">
+                <h5>Kiyan Alavi</h5>
+                <p>Salam Khubi?</p>
+              </div>
+            </div>
+            <div class="time">13:34</div>
+          </article>
+          <article class="recent-user">
+            <div class="user-infos">
+              <div class="user-profile">
+                <img src="./img/user-profile.png" alt="" />
+              </div>
+              <div class="user-info">
+                <h5>Kiyan Alavi</h5>
+                <p>Salam Khubi?</p>
+              </div>
+            </div>
+            <div class="time">13:34</div>
+          </article>
+          <article class="recent-user">
+            <div class="user-infos">
+              <div class="user-profile">
+                <img src="./img/user-profile.png" alt="" />
+              </div>
+              <div class="user-info">
+                <h5>Kiyan Alavi</h5>
+                <p>Salam Khubi?</p>
+              </div>
+            </div>
+            <div class="time">13:34</div>
+          </article>
+          <article class="recent-user">
+            <div class="user-infos">
+              <div class="user-profile">
+                <img src="./img/user-profile.png" alt="" />
+              </div>
+              <div class="user-info">
+                <h5>Kiyan Alavi</h5>
+                <p>Salam Khubi?</p>
+              </div>
+            </div>
+            <div class="time">13:34</div>
+          </article>
+          <article class="recent-user">
+            <div class="user-infos">
+              <div class="user-profile">
+                <img src="./img/user-profile.png" alt="" />
+              </div>
+              <div class="user-info">
+                <h5>Kiyan Alavi</h5>
+                <p>Salam Khubi?</p>
+              </div>
+            </div>
+            <div class="time">13:34</div>
+          </article>
+          <article class="recent-user">
+            <div class="user-infos">
+              <div class="user-profile">
+                <img src="./img/user-profile.png" alt="" />
+              </div>
+              <div class="user-info">
+                <h5>Kiyan Alavi</h5>
+                <p>Salam Khubi?</p>
+              </div>
+            </div>
+            <div class="time">13:34</div>
+          </article>
+          <article class="recent-user">
+            <div class="user-infos">
+              <div class="user-profile">
+                <img src="./img/user-profile.png" alt="" />
+              </div>
+              <div class="user-info">
+                <h5>Kiyan Alavi</h5>
+                <p>Salam Khubi?</p>
+              </div>
+            </div>
+            <div class="time">13:34</div>
+          </article>
+          <article class="recent-user">
+            <div class="user-infos">
+              <div class="user-profile">
+                <img src="./img/user-profile.png" alt="" />
+              </div>
+              <div class="user-info">
+                <h5>Kiyan Alavi</h5>
+                <p>Salam Khubi?</p>
+              </div>
+            </div>
+            <div class="time">13:34</div>
+          </article>
+          <article class="recent-user">
+            <div class="user-infos">
+              <div class="user-profile">
+                <img src="./img/user-profile.png" alt="" />
+              </div>
+              <div class="user-info">
+                <h5>Kiyan Alavi</h5>
+                <p>Salam Khubi?</p>
+              </div>
+            </div>
+            <div class="time">13:34</div>
+          </article>
+          <article class="recent-user">
+            <div class="user-infos">
+              <div class="user-profile">
+                <img src="./img/user-profile.png" alt="" />
+              </div>
+              <div class="user-info">
+                <h5>Kiyan Alavi</h5>
+                <p>Salam Khubi?</p>
+              </div>
+            </div>
+            <div class="time">13:34</div>
+          </article>
+          <article class="recent-user">
+            <div class="user-infos">
+              <div class="user-profile">
+                <img src="./img/user-profile.png" alt="" />
+              </div>
+              <div class="user-info">
+                <h5>Kiyan Alavi</h5>
+                <p>Salam Khubi?</p>
+              </div>
+            </div>
+            <div class="time">13:34</div>
+          </article>
+          <article class="recent-user">
+            <div class="user-infos">
+              <div class="user-profile">
+                <img src="./img/user-profile.png" alt="" />
+              </div>
+              <div class="user-info">
+                <h5>Kiyan Alavi</h5>
+                <p>Salam Khubi?</p>
+              </div>
+            </div>
+            <div class="time">13:34</div>
+          </article>
+          <article class="recent-user">
+            <div class="user-infos">
+              <div class="user-profile">
+                <img src="./img/user-profile.png" alt="" />
+              </div>
+              <div class="user-info">
+                <h5>Kiyan Alavi</h5>
+                <p>Salam Khubi?</p>
+              </div>
+            </div>
+            <div class="time">13:34</div>
+          </article>
+          <article class="recent-user">
+            <div class="user-infos">
+              <div class="user-profile">
+                <img src="./img/user-profile.png" alt="" />
+              </div>
+              <div class="user-info">
+                <h5>Kiyan Alavi</h5>
+                <p>Salam Khubi?</p>
+              </div>
+            </div>
+            <div class="time">13:34</div>
+          </article>
+          <article class="recent-user">
+            <div class="user-infos">
+              <div class="user-profile">
+                <img src="./img/user-profile.png" alt="" />
+              </div>
+              <div class="user-info">
+                <h5>Kiyan Alavi</h5>
+                <p>Salam Khubi?</p>
+              </div>
+            </div>
+            <div class="time">13:34</div>
+          </article>
+          <article class="recent-user">
+            <div class="user-infos">
+              <div class="user-profile">
+                <img src="./img/user-profile.png" alt="" />
+              </div>
+              <div class="user-info">
+                <h5>Kiyan Alavi</h5>
+                <p>Salam Khubi?</p>
+              </div>
+            </div>
+            <div class="time">13:34</div>
+          </article>
+          <article class="recent-user">
+            <div class="user-infos">
+              <div class="user-profile">
+                <img src="./img/user-profile.png" alt="" />
+              </div>
+              <div class="user-info">
+                <h5>Kiyan Alavi</h5>
+                <p>Salam Khubi?</p>
+              </div>
+            </div>
+            <div class="time">13:34</div>
+          </article>
+          <article class="recent-user">
+            <div class="user-infos">
+              <div class="user-profile">
+                <img src="./img/user-profile.png" alt="" />
+              </div>
+              <div class="user-info">
+                <h5>Kiyan Alavi</h5>
+                <p>Salam Khubi?</p>
+              </div>
+            </div>
+            <div class="time">13:34</div>
+          </article>
+          <article class="recent-user">
+            <div class="user-infos">
+              <div class="user-profile">
+                <img src="./img/user-profile.png" alt="" />
+              </div>
+              <div class="user-info">
+                <h5>Kiyan Alavi</h5>
+                <p>Salam Khubi?</p>
+              </div>
+            </div>
+            <div class="time">13:34</div>
+          </article>
+          <article class="recent-user test">
+            <div class="user-infos">
+              <div class="user-profile">
+                <img src="./img/user-profile.png" alt="" />
+              </div>
+              <div class="user-info">
+                <h5>Kiyan Alavi</h5>
+                <p>Salam Khubi?</p>
+              </div>
+            </div>
+            <div class="time">13:34</div>
+          </article>
+        </section>
+      </section>
+      <section class="chat-content">
+        <h3>Chat</h3>
+        <article class="top-bar">
+          <div class="user-infos">
+            <div class="user-profile">
+              <img src="./img/user-profile.png" alt="" />
+            </div>
+            <div class="user-info">
+              <h5>Kiyan Alavi</h5>
+              <p>Online</p>
+            </div>
+          </div>
+          <button class="back">Back</button>
+          <div class="chat-icon">
+            <button>
+              <i class="fas fa-phone-alt"></i>
+            </button>
+            <button>
+              <i class="fas fa-video"></i>
+            </button>
+          </div>
+        </article>
+        <article class="user-chats">
+          <div class="owner-side">
+            <div class="user-profile">
+              <img src="./img/user-profile.png" alt="" />
+            </div>
+            <div class="message-box">
+              <p class="message">This text is from owner</p>
+              <p class="time">16:03:15</p>
+            </div>
+          </div>
+          <div class="opposite-side">
+            <div class="user-profile">
+              <img src="./img/user-profile.png" alt="" />
+            </div>
+            <div class="message-box">
+              <p class="message">This text is from opposite</p>
+              <p class="time">17:10:25</p>
+            </div>
+          </div>
+          <div class="owner-side">
+            <div class="user-profile">
+              <img src="./img/user-profile.png" alt="" />
+            </div>
+            <div class="message-box">
+              <p class="message">This text is from owner</p>
+              <p class="time">16:03:15</p>
+            </div>
+          </div>
+          <div class="opposite-side">
+            <div class="user-profile">
+              <img src="./img/user-profile.png" alt="" />
+            </div>
+            <div class="message-box">
+              <p class="message">This text is from opposite</p>
+              <p class="time">17:10:25</p>
+            </div>
+          </div>
+          <div class="owner-side">
+            <div class="user-profile">
+              <img src="./img/user-profile.png" alt="" />
+            </div>
+            <div class="message-box">
+              <p class="message">This text is from owner</p>
+              <p class="time">16:03:15</p>
+            </div>
+          </div>
+          <div class="opposite-side">
+            <div class="user-profile">
+              <img src="./img/user-profile.png" alt="" />
+            </div>
+            <div class="message-box">
+              <p class="message">This text is from opposite</p>
+              <p class="time">17:10:25</p>
+            </div>
+          </div>
+
+          <div class="owner-side">
+            <div class="user-profile">
+              <img src="./img/user-profile.png" alt="" />
+            </div>
+            <div class="message-box">
+              <p class="message">This text is from owner</p>
+              <p class="time">16:03:15</p>
+            </div>
+          </div>
+          <div class="opposite-side">
+            <div class="user-profile">
+              <img src="./img/user-profile.png" alt="" />
+            </div>
+            <div class="message-box">
+              <p class="message">This text is from opposite</p>
+              <p class="time">17:10:25</p>
+            </div>
+          </div>
+          <div class="owner-side">
+            <div class="user-profile">
+              <img src="./img/user-profile.png" alt="" />
+            </div>
+            <div class="message-box">
+              <p class="message">This text is from owner</p>
+              <p class="time">16:03:15</p>
+            </div>
+          </div>
+          <div class="opposite-side">
+            <div class="user-profile">
+              <img src="./img/user-profile.png" alt="" />
+            </div>
+            <div class="message-box">
+              <p class="message">This text is from opposite</p>
+              <p class="time">17:10:25</p>
+            </div>
+          </div>
+          <div class="owner-side">
+            <div class="user-profile">
+              <img src="./img/user-profile.png" alt="" />
+            </div>
+            <div class="message-box">
+              <p class="message">This text is from owner</p>
+              <p class="time">16:03:15</p>
+            </div>
+          </div>
+          <div class="opposite-side">
+            <div class="user-profile">
+              <img src="./img/user-profile.png" alt="" />
+            </div>
+            <div class="message-box">
+              <p class="message">This text is from opposite</p>
+              <p class="time">17:10:25</p>
+            </div>
+          </div>
+          <div class="owner-side">
+            <div class="user-profile">
+              <img src="./img/user-profile.png" alt="" />
+            </div>
+            <div class="message-box">
+              <p class="message">This text is from owner</p>
+              <p class="time">16:03:15</p>
+            </div>
+          </div>
+        </article>
+        <article class="input-box">
+          <button class="message-icon">
+            <i class="fas fa-plus"></i>
+          </button>
+          <form action="">
+            <input type="text" placeholder="Type your message" />
+            <button type="submit">
+              <i class="fas fa-paper-plane"></i>
+            </button>
+          </form>
+        </article>
+      </section>
+      <section class="user-profile-section">
+        <article class="main-information">
+          <div class="user-profile">
+            <img src="./img/user-profile.png" alt="" />
+          </div>
+          <p class="full-name">Kiyan Alavi</p>
+        </article>
+        <article class="other-information">
+          <h3>Personal Information</h3>
+          <div class="info">
+            <h4>Country</h4>
+            <p>Iran</p>
+          </div>
+          <div class="info">
+            <h4>Phone</h4>
+            <p>+98 936 558 4552</p>
+          </div>
+          <div class="info">
+            <h4>Email</h4>
+            <p>test@email.com</p>
+          </div>
+        </article>
+      </section>
+    </main>
+  );
+}
