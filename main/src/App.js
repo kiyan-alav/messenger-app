@@ -1,16 +1,13 @@
+import {useRoutes} from "react-router-dom"
+import { routes } from "./routes";
 import "./App.css";
-import Chat from "./pages/Chat/Chat";
-import Home from "./pages/Home/Home";
-import Login from "./pages/Login/Login";
-import Register from "./pages/Register/Register";
 
 function App() {
+  const router = useRoutes(routes)
+
   return (
     <>
-      {/* <Home /> */}
-      {/* <Register /> */}
-      {/* <Login /> */}
-      {/* <Chat /> */}
+      {router}
     </>
   );
 }
