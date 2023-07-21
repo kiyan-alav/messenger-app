@@ -6,7 +6,7 @@ export default function User() {
     <article class={styles.recentUser}>
       <div class={styles.userInfos}>
         <div class={styles.userProfile}>
-          <img src="./img/user-profile.png" alt="" />
+          <img src="./img/user-profile.png" alt="ax" />
         </div>
         <div class={styles.userInfo}>
           <h5>Kiyan Alavi</h5>

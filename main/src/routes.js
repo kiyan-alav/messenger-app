@@ -7,5 +7,5 @@ export const routes = [
   { path: "/", element: <Home /> },
   { path: "/login", element: <Login /> },
   { path: "/register", element: <Register /> },
-  { path: "/chat/:userId", element: <Chat /> },
+  { path: "/chat", element: <Chat /> },
 ];
