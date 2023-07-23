@@ -116,6 +116,19 @@ export default function Register() {
         onChange={(e) => setCountry(e.target.value)}
         value={country}
       />
+      <div className={styles.avatar}>
+        <input
+          type="file"
+          placeholder="Avatar"
+          name="avatar"
+          id="avatar"
+          style={{ display: "none" }}
+        />
+        <label htmlFor="avatar">
+          <img src="./img/addAvatar.jfif" alt="" />
+          <span>Add An Avatar</span>
+        </label>
+      </div>
       <div className={styles.genderBox}>
         <div className={styles.male}>
           <label htmlFor="male">Male</label>

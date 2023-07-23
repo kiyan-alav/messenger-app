@@ -55,3 +55,25 @@ Register Page
   color: var(--clr-primary-1);
   font-weight: 700;
 }
+
+.avatar {
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
+
+.avatar label {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+}
+
+.avatar img {
+  width: 3rem;
+  border-radius: 50%;
+}
+
+.avatar span {
+  color: var(--white);
+  font-size: 1.2rem;
+}
