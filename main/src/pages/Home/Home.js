@@ -3,6 +3,7 @@ import ChatLogo from "./../../component/ChatLogo/ChatLogo";
 import ChatIntro from "./../../component/ChatIntro/ChatIntro";
 
 import styles from "./Home.module.css";
+import { Link } from "react-router-dom";
 
 export default function Home() {
   return (
@@ -17,13 +18,13 @@ export default function Home() {
       <div className={styles.registerLogin}>
         <p>
           Didn't you have account?{" "}
-          <a href="./register.html" className="create">
+          <Link to="login" className="create">
             Create one
-          </a>{" "}
+          </Link>{" "}
           or{" "}
-          <a href="./login.html" className="login">
+          <Link to="register" className="login">
             Login
-          </a>
+          </Link>
         </p>
       </div>
     </main>
