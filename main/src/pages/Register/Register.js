@@ -10,7 +10,7 @@ export default function Register() {
         placeholder="First Name"
         name="first-name"
         id="first-name"
-        autofocus
+        autoFocus
         className={styles.registerInput}
       />
       <input
@@ -56,8 +56,8 @@ export default function Register() {
         pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}"
         className={styles.registerInput}
       />
-      <div class={styles.genderBox}>
-        <div class={styles.male}>
+      <div className={styles.genderBox}>
+        <div className={styles.male}>
           <label for="male">Male</label>
           <input
             type="radio"
@@ -66,7 +66,7 @@ export default function Register() {
             className={styles.registerInput}
           />
         </div>
-        <div class={styles.female}>
+        <div className={styles.female}>
           <label for="female">Female</label>
           <input
             type="radio"
@@ -76,7 +76,7 @@ export default function Register() {
           />
         </div>
       </div>
-      <button type="submit" class={styles.signUp}>
+      <button type="submit" className={styles.signUp}>
         Sign Up
       </button>
     </Form>

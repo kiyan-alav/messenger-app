@@ -6,7 +6,7 @@ import ChatContent from "../../component/ChatContent/ChatContent";
 
 export default function Chat() {
   return (
-    <main class={styles.chat}>
+    <main className={styles.chat}>
       <UsersList />
       <ChatContent />
       <UserProfile />

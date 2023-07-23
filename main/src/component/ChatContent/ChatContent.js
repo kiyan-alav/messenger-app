@@ -4,37 +4,37 @@ import styles from "./ChatContent.module.css";
 
 export default function ChatContent() {
   return (
-    <section class={styles.chatContent}>
+    <section className={styles.chatContent}>
       <h3>Chat</h3>
-      <article class={styles.topBar}>
-        <div class={styles.userInfos}>
-          <div class={styles.userProfile}>
+      <article className={styles.topBar}>
+        <div className={styles.userInfos}>
+          <div className={styles.userProfile}>
             <img src="./img/user-profile.png" alt="" />
           </div>
-          <div class={styles.userInfo}>
+          <div className={styles.userInfo}>
             <h5>Kiyan Alavi</h5>
             <p>Online</p>
           </div>
         </div>
-        <button class={styles.back}>Back</button>
-        <div class={styles.chatIcon}>
+        <button className={styles.back}>Back</button>
+        <div className={styles.chatIcon}>
           <button>
-            <i class="fas fa-phone-alt"></i>
+            <i className="fas fa-phone-alt"></i>
           </button>
           <button>
-            <i class="fas fa-video"></i>
+            <i className="fas fa-video"></i>
           </button>
         </div>
       </article>
-      <article class={styles.userChats}>
+      <article className={styles.userChats}>
         <Message />
         <Message />
         <Message />
         <Message />
       </article>
-      <article class={styles.inputBox}>
-        <button class={styles.messageIcon}>
-          <i class="fas fa-plus"></i>
+      <article className={styles.inputBox}>
+        <button className={styles.messageIcon}>
+          <i className="fas fa-plus"></i>
         </button>
         <form action="" className={styles.messageForm}>
           <input
@@ -43,7 +43,7 @@ export default function ChatContent() {
             className={styles.messageInput}
           />
           <button type="submit" className={styles.send}>
-            <i class="fas fa-paper-plane"></i>
+            <i className="fas fa-paper-plane"></i>
           </button>
         </form>
       </article>
