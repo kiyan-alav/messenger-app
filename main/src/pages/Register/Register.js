@@ -48,14 +48,6 @@ export default function Register() {
         id="country"
         className={styles.registerInput}
       />
-      <input
-        type="tel"
-        placeholder="Cell Phone"
-        name="cell-phone"
-        id="cell-phone"
-        pattern="[0-9]{4}-[0-9]{3}-[0-9]{4}"
-        className={styles.registerInput}
-      />
       <div className={styles.genderBox}>
         <div className={styles.male}>
           <label for="male">Male</label>
