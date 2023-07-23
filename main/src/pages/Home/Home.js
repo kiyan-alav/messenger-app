@@ -18,11 +18,11 @@ export default function Home() {
       <div className={styles.registerLogin}>
         <p>
           Didn't you have account?{" "}
-          <Link to="login" className="create">
+          <Link to="register" className="create">
             Create one
           </Link>{" "}
           or{" "}
-          <Link to="register" className="login">
+          <Link to="login" className="login">
             Login
           </Link>
         </p>
