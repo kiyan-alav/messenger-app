@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import Form from "../../component/Form/Form";
 import styles from "./Register.module.css";
+
+import supabase from "./../../config/supabaseClient";
 
 export default function Register() {
   const [firstName, setFirstName] = useState("");
@@ -12,7 +15,10 @@ export default function Register() {
   const [country, setCountry] = useState("");
   const [gender, setGender] = useState("");
 
-  const inputValidation = function () {
+  const navigate = useNavigate();
+
+  const signInHandler = async function (e) {
+    e.preventDefault();
     if (
       !firstName.trim() ||
       !lastName.trim() ||
@@ -24,31 +30,33 @@ export default function Register() {
       Swal.fire("Please Complete All Fields");
       return;
     }
-  };
-
-  const passwordValidation = function () {
     if (password !== cPassword) {
       Swal.fire("Your Password Doesn't Match! Try Again.");
       return;
     }
-  };
 
-  const signInHandler = function (e) {
-    e.preventDefault();
-
-    inputValidation();
-    passwordValidation();
-
-    const user = {
-      id: crypto.randomUUID(),
-      fullName: `${firstName} ${lastName}`,
+    const { data, error } = await supabase.auth.signUp({
       email: email,
       password: password,
-      country: country,
-      gender: gender,
-    };
+      options: {
+        data: {
+          fullName: `${firstName} ${lastName}`,
+          country: country,
+          gender: gender,
+        },
+      },
+    });
 
-    console.log(user);
+    if (data) {
+      Swal.fire({
+        icon: "success",
+        title: "Registration Completed",
+        text: "Please Check Your Email To Confirm",
+      });
+      navigate("/login");
+    }
+
+    console.log(data, error);
   };
 
   return (

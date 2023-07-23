@@ -4,7 +4,6 @@ import "./App.css";
 import supabase from "./config/supabaseClient";
 
 function App() {
-  console.log(supabase);
   return <RouterProvider router={routes} />;
 }
 
