@@ -14,27 +14,11 @@ export default function Register() {
   const [cPassword, setCPassword] = useState("");
   const [country, setCountry] = useState("");
   const [gender, setGender] = useState("");
+  const [file, setFile] = useState(null);
 
   const navigate = useNavigate();
 
-  const signInHandler = async function (e) {
-    e.preventDefault();
-    if (
-      !firstName.trim() ||
-      !lastName.trim() ||
-      !email.trim() ||
-      (!password.trim() && !cPassword.trim()) ||
-      !country.trim() ||
-      !gender.trim()
-    ) {
-      Swal.fire("Please Complete All Fields");
-      return;
-    }
-    if (password !== cPassword) {
-      Swal.fire("Your Password Doesn't Match! Try Again.");
-      return;
-    }
-
+  const userAuth = async function () {
     const { data, error } = await supabase.auth.signUp({
       email: email,
       password: password,
@@ -57,6 +41,61 @@ export default function Register() {
     }
 
     console.log(data, error);
+  };
+
+  const uploadAvatar = async function () {
+    const { data, error } = await supabase.storage
+      .from("avatars")
+      .upload(`public/${file[0].name}`, file[0], {
+        cacheControl: "3600",
+        upsert: false,
+      });
+
+    if (data) {
+      console.log(data);
+    } else {
+      console.log(error);
+    }
+  };
+
+  const getAvatar = async function () {
+    const { data, error } = await supabase.storage
+      .from("avatars")
+      .list("public", {
+        limit: 100,
+        offset: 0,
+        sortBy: { column: `name`, order: "asc" },
+      });
+
+    if (data) {
+      console.log(data);
+    } else {
+      console.log(error);
+    }
+  };
+
+  const signInHandler = function (e) {
+    e.preventDefault();
+    if (
+      !firstName.trim() ||
+      !lastName.trim() ||
+      !email.trim() ||
+      (!password.trim() && !cPassword.trim()) ||
+      !country.trim() ||
+      !gender.trim() ||
+      !file
+    ) {
+      Swal.fire("Please Complete All Fields");
+      return;
+    }
+    if (password !== cPassword) {
+      Swal.fire("Your Password Doesn't Match! Try Again.");
+      return;
+    }
+
+    userAuth();
+    uploadAvatar();
+    // getAvatar();
   };
 
   return (
@@ -120,9 +159,10 @@ export default function Register() {
         <input
           type="file"
           placeholder="Avatar"
-          name="avatar"
           id="avatar"
           style={{ display: "none" }}
+          name="avatar"
+          onChange={(e) => setFile(e.target.files)}
         />
         <label htmlFor="avatar">
           <img src="./img/addAvatar.jfif" alt="" />
