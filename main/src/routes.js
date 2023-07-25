@@ -1,4 +1,5 @@
 import RootLayout from "./component/RootLayout/RootLayout";
+import AuthProvider from "./context/AuthContext";
 import Chat from "./pages/Chat/Chat";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
@@ -15,7 +16,15 @@ export const routes = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "login", element: <Login /> },
       { path: "register", element: <Register /> },
-      { path: "chat", element: <Chat /> },
+      // { path: "chat", element: <Chat /> },
+      {
+        path: "chat",
+        element: (
+          <AuthProvider>
+            <Chat />
+          </AuthProvider>
+        ),
+      },
     ],
   },
 ]);
