@@ -1,0 +1,13 @@
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.loadingContainer img {
+  width: 10rem;
+}
