@@ -27,6 +27,7 @@ export default function Register() {
           fullName: `${firstName} ${lastName}`,
           country: country,
           gender: gender,
+          avatar: `https://puerxzgdqfjyvsizayzy.supabase.co/storage/v1/object/public/avatars/public/${file[0].name}`,
         },
       },
     });
