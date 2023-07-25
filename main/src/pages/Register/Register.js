@@ -43,6 +43,26 @@ export default function Register() {
     console.log(data, error);
   };
 
+  const createUser = async function () {
+    const newUser = {
+      userId: crypto.randomUUID(),
+      fullName: `${firstName} ${lastName}`,
+      email: email,
+      password: password,
+      country: country,
+      gender: gender,
+      avatar: file[0].name,
+    };
+
+    const { data, error } = await supabase.from("users").insert(newUser);
+
+    if (data) {
+      console.log(data);
+    } else {
+      console.log(error);
+    }
+  };
+
   const uploadAvatar = async function () {
     const { data, error } = await supabase.storage
       .from("avatars")
@@ -58,23 +78,7 @@ export default function Register() {
     }
   };
 
-  const getAvatar = async function () {
-    const { data, error } = await supabase.storage
-      .from("avatars")
-      .list("public", {
-        limit: 100,
-        offset: 0,
-        sortBy: { column: `name`, order: "asc" },
-      });
-
-    if (data) {
-      console.log(data);
-    } else {
-      console.log(error);
-    }
-  };
-
-  const signInHandler = function (e) {
+  const registerHandler = function (e) {
     e.preventDefault();
     if (
       !firstName.trim() ||
@@ -94,8 +98,8 @@ export default function Register() {
     }
 
     userAuth();
+    createUser();
     uploadAvatar();
-    // getAvatar();
   };
 
   return (
@@ -193,7 +197,7 @@ export default function Register() {
           />
         </div>
       </div>
-      <button type="submit" className={styles.signUp} onClick={signInHandler}>
+      <button type="submit" className={styles.signUp} onClick={registerHandler}>
         Sign Up
       </button>
     </Form>
