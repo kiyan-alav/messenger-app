@@ -51,7 +51,7 @@ export default function Register() {
       password: password,
       country: country,
       gender: gender,
-      avatar: file[0].name,
+      avatar: `https://puerxzgdqfjyvsizayzy.supabase.co/storage/v1/object/public/avatars/public/${file[0].name}`,
     };
 
     const { data, error } = await supabase.from("users").insert(newUser);
