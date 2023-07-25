@@ -1,6 +1,6 @@
 import { createContext, useEffect, useState } from "react";
 import supabase from "../config/supabaseClient";
-import Home from "../pages/Home/Home";
+import Loading from "../component/Loading/Loading";
 
 export const AuthContext = createContext({});
 
@@ -23,7 +23,7 @@ const AuthProvider = function (props) {
 
   return (
     <AuthContext.Provider value={user}>
-      {user ? props.children : <Home />}
+      {user ? props.children : <Loading />}
     </AuthContext.Provider>
   );
 };
