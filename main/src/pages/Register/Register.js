@@ -55,7 +55,10 @@ export default function Register() {
       avatar: `https://puerxzgdqfjyvsizayzy.supabase.co/storage/v1/object/public/avatars/public/${file[0].name}`,
     };
 
-    const { data, error } = await supabase.from("users").insert(newUser);
+    const { data, error } = await supabase
+      .from("users")
+      .insert(newUser)
+      .select();
 
     if (data) {
       console.log(data);
