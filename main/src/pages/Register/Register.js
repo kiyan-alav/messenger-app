@@ -44,6 +44,21 @@ export default function Register() {
     console.log(data, error);
   };
 
+  const createUserChats = async function (userId) {
+    const { data, error } = await supabase
+      .from("userChats")
+      .insert({
+        userId: userId,
+      })
+      .select();
+
+    if (data) {
+      console.log(data);
+    } else {
+      console.log(error);
+    }
+  };
+
   const createUser = async function () {
     const newUser = {
       userId: crypto.randomUUID(),
@@ -59,6 +74,8 @@ export default function Register() {
       .from("users")
       .insert(newUser)
       .select();
+
+    createUserChats(newUser.userId);
 
     if (data) {
       console.log(data);
