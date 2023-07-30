@@ -18,7 +18,9 @@ const AuthProvider = function (props) {
   };
 
   useEffect(() => {
-    onAuthStateChange();
+    const unSub = onAuthStateChange();
+
+    return () => unSub();
   }, []);
 
   return (

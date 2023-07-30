@@ -1,8 +1,17 @@
 import React from "react";
 import Message from "../Message/Message";
 import styles from "./ChatContent.module.css";
+import supabase from "../../config/supabaseClient";
 
 export default function ChatContent() {
+  const signOutHandler = async function () {
+    const { error } = await supabase.auth.signOut();
+
+    if (error) {
+      console.log(error);
+    }
+  };
+
   return (
     <section className={styles.chatContent}>
       <h3>Chat</h3>
@@ -16,7 +25,9 @@ export default function ChatContent() {
             <p>Online</p>
           </div>
         </div>
-        <button className={styles.back}>Back</button>
+        <button className={styles.back} onClick={signOutHandler}>
+          Logout
+        </button>
         <div className={styles.chatIcon}>
           <button>
             <i className="fas fa-phone-alt"></i>
