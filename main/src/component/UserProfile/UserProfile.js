@@ -1,14 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
 import styles from "./UserProfile.module.css";
+import { AuthContext } from "../../context/AuthContext";
 
 export default function UserProfile() {
+  const currUserCtx = useContext(AuthContext);
+
+  console.log(currUserCtx);
+
   return (
     <section className={styles.userProfileSection}>
       <article className={styles.mainInformation}>
         <div className={styles.userProfile}>
-          <img src="./img/user-profile.png" alt="" />
+          <img src={`${currUserCtx.user_metadata.avatar}`} alt="" />
         </div>
-        <p className={styles.fullName}>Kiyan Alavi</p>
+        <p className={styles.fullName}>{currUserCtx.user_metadata.fullName}</p>
       </article>
       <article className={styles.otherInformation}>
         <h3>Personal Information</h3>
@@ -17,12 +22,12 @@ export default function UserProfile() {
           <p>Iran</p>
         </div>
         <div className={styles.info}>
-          <h4>Phone</h4>
-          <p>+98 936 558 4552</p>
+          <h4>Gender</h4>
+          <p>{currUserCtx.user_metadata.gender}</p>
         </div>
         <div className={styles.info}>
           <h4>Email</h4>
-          <p>test@email.com</p>
+          <p>{currUserCtx.email}</p>
         </div>
       </article>
     </section>
