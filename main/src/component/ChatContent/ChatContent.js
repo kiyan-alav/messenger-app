@@ -2,10 +2,15 @@ import React from "react";
 import Message from "../Message/Message";
 import styles from "./ChatContent.module.css";
 import supabase from "../../config/supabaseClient";
+import { useNavigate } from "react-router-dom";
 
 export default function ChatContent() {
+  const navigate = useNavigate();
+
   const signOutHandler = async function () {
     const { error } = await supabase.auth.signOut();
+
+    navigate("/login");
 
     if (error) {
       console.log(error);
