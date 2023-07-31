@@ -1,21 +1,21 @@
 import React from "react";
 import Message from "../Message/Message";
 import styles from "./ChatContent.module.css";
-import supabase from "../../config/supabaseClient";
+// import supabase from "../../config/supabaseClient";
 import { useNavigate } from "react-router-dom";
 
 export default function ChatContent() {
   const navigate = useNavigate();
 
-  const signOutHandler = async function () {
-    const { error } = await supabase.auth.signOut();
+  // const signOutHandler = async function () {
+  //   const { error } = await supabase.auth.signOut();
 
-    navigate("/login");
+  //   navigate("/login");
 
-    if (error) {
-      console.log(error);
-    }
-  };
+  //   if (error) {
+  //     console.log(error);
+  //   }
+  // };
 
   return (
     <section className={styles.chatContent}>
@@ -30,7 +30,7 @@ export default function ChatContent() {
             <p>Online</p>
           </div>
         </div>
-        <button className={styles.back} onClick={signOutHandler}>
+        <button className={styles.back} onClick={"signOutHandler"}>
           Logout
         </button>
         <div className={styles.chatIcon}>

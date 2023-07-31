@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import Form from "../../component/Form/Form";
 import styles from "./Register.module.css";
 
-import supabase from "./../../config/supabaseClient";
+// import supabase from "./../../config/supabaseClient";
 
 export default function Register() {
   const [firstName, setFirstName] = useState("");
@@ -18,110 +18,110 @@ export default function Register() {
 
   const navigate = useNavigate();
 
-  const userAuth = async function () {
-    const { data, error } = await supabase.auth.signUp({
-      email: email,
-      password: password,
-      options: {
-        data: {
-          fullName: `${firstName} ${lastName}`,
-          country: country,
-          gender: gender,
-          avatar: `https://puerxzgdqfjyvsizayzy.supabase.co/storage/v1/object/public/avatars/public/${file[0].name}`,
-        },
-      },
-    });
+  // const userAuth = async function () {
+  //   const { data, error } = await supabase.auth.signUp({
+  //     email: email,
+  //     password: password,
+  //     options: {
+  //       data: {
+  //         fullName: `${firstName} ${lastName}`,
+  //         country: country,
+  //         gender: gender,
+  //         avatar: `https://puerxzgdqfjyvsizayzy.supabase.co/storage/v1/object/public/avatars/public/${file[0].name}`,
+  //       },
+  //     },
+  //   });
 
-    if (data) {
-      Swal.fire({
-        icon: "success",
-        title: "Registration Completed",
-        text: "Please Check Your Email To Confirm",
-      });
-      navigate("/login");
-    }
+  //   if (data) {
+  //     Swal.fire({
+  //       icon: "success",
+  //       title: "Registration Completed",
+  //       text: "Please Check Your Email To Confirm",
+  //     });
+  //     navigate("/login");
+  //   }
 
-    console.log(data, error);
-  };
+  //   console.log(data, error);
+  // };
 
-  const createUserChats = async function (userId) {
-    const { data, error } = await supabase
-      .from("userChats")
-      .insert({
-        userId: userId,
-      })
-      .select();
+  // const createUserChats = async function (userId) {
+  //   const { data, error } = await supabase
+  //     .from("userChats")
+  //     .insert({
+  //       userId: userId,
+  //     })
+  //     .select();
 
-    if (data) {
-      console.log(data);
-    } else {
-      console.log(error);
-    }
-  };
+  //   if (data) {
+  //     console.log(data);
+  //   } else {
+  //     console.log(error);
+  //   }
+  // };
 
-  const createUser = async function () {
-    const newUser = {
-      userId: crypto.randomUUID(),
-      fullName: `${firstName} ${lastName}`,
-      email: email,
-      password: password,
-      country: country,
-      gender: gender,
-      avatar: `https://puerxzgdqfjyvsizayzy.supabase.co/storage/v1/object/public/avatars/public/${file[0].name}`,
-    };
+  // const createUser = async function () {
+  //   const newUser = {
+  //     userId: crypto.randomUUID(),
+  //     fullName: `${firstName} ${lastName}`,
+  //     email: email,
+  //     password: password,
+  //     country: country,
+  //     gender: gender,
+  //     avatar: `https://puerxzgdqfjyvsizayzy.supabase.co/storage/v1/object/public/avatars/public/${file[0].name}`,
+  //   };
 
-    const { data, error } = await supabase
-      .from("users")
-      .insert(newUser)
-      .select();
+  //   const { data, error } = await supabase
+  //     .from("users")
+  //     .insert(newUser)
+  //     .select();
 
-    createUserChats(newUser.userId);
+  //   createUserChats(newUser.userId);
 
-    if (data) {
-      console.log(data);
-    } else {
-      console.log(error);
-    }
-  };
+  //   if (data) {
+  //     console.log(data);
+  //   } else {
+  //     console.log(error);
+  //   }
+  // };
 
-  const uploadAvatar = async function () {
-    const { data, error } = await supabase.storage
-      .from("avatars")
-      .upload(`public/${file[0].name}`, file[0], {
-        cacheControl: "3600",
-        upsert: false,
-      });
+  // const uploadAvatar = async function () {
+  //   const { data, error } = await supabase.storage
+  //     .from("avatars")
+  //     .upload(`public/${file[0].name}`, file[0], {
+  //       cacheControl: "3600",
+  //       upsert: false,
+  //     });
 
-    if (data) {
-      console.log(data);
-    } else {
-      console.log(error);
-    }
-  };
+  //   if (data) {
+  //     console.log(data);
+  //   } else {
+  //     console.log(error);
+  //   }
+  // };
 
-  const registerHandler = function (e) {
-    e.preventDefault();
-    if (
-      !firstName.trim() ||
-      !lastName.trim() ||
-      !email.trim() ||
-      (!password.trim() && !cPassword.trim()) ||
-      !country.trim() ||
-      !gender.trim() ||
-      !file
-    ) {
-      Swal.fire("Please Complete All Fields");
-      return;
-    }
-    if (password !== cPassword) {
-      Swal.fire("Your Password Doesn't Match! Try Again.");
-      return;
-    }
+  // const registerHandler = function (e) {
+  //   e.preventDefault();
+  //   if (
+  //     !firstName.trim() ||
+  //     !lastName.trim() ||
+  //     !email.trim() ||
+  //     (!password.trim() && !cPassword.trim()) ||
+  //     !country.trim() ||
+  //     !gender.trim() ||
+  //     !file
+  //   ) {
+  //     Swal.fire("Please Complete All Fields");
+  //     return;
+  //   }
+  //   if (password !== cPassword) {
+  //     Swal.fire("Your Password Doesn't Match! Try Again.");
+  //     return;
+  //   }
 
-    userAuth();
-    createUser();
-    uploadAvatar();
-  };
+  //   userAuth();
+  //   createUser();
+  //   uploadAvatar();
+  // };
 
   return (
     <Form>
@@ -218,7 +218,11 @@ export default function Register() {
           />
         </div>
       </div>
-      <button type="submit" className={styles.signUp} onClick={registerHandler}>
+      <button
+        type="submit"
+        className={styles.signUp}
+        onClick={"registerHandler"}
+      >
         Sign Up
       </button>
     </Form>

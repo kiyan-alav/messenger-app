@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import supabase from "./../../config/supabaseClient";
+// import supabase from "./../../config/supabaseClient";
 import styles from "./UsersList.module.css";
 import User from "../User/User";
 
@@ -8,27 +8,22 @@ export default function UsersList() {
   const [user, setUser] = useState(null);
   const [error, setError] = useState(false);
 
-  const handleSearch = async function () {
-    const { data, error } = await supabase
-      .from("users")
-      .select("fullName")
-      .eq(userName);
+  // const handleSearch = async function () {
+  //   const { data, error } = await supabase
+  //     .from("users")
+  //     .select("fullName")
+  //     .eq(userName);
 
-    if (data) {
-      console.log(data);
-    } else {
-      console.log(error);
-    }
-  };
+  //   if (data) {
+  //     console.log(data);
+  //   } else {
+  //     console.log(error);
+  //   }
+  // };
 
-  const handleKey = function (e) {
-    console.log(e.code);
-    if (e.code === "ENTER") {
-      e.preventDefault();
-      handleSearch();
-    }
-    // e.code === "ENTER" && handleSearch();
-  };
+  // const handleKey = function (e) {
+  // e.code === "ENTER" && handleSearch();
+  // };
 
   return (
     <section className={styles.usersList}>
@@ -41,7 +36,7 @@ export default function UsersList() {
             id="search"
             placeholder="Search For Users..."
             onChange={(e) => setUserName(e.target.value)}
-            onKeyDown={handleKey}
+            onKeyDown={"handleKey"}
             // value={userName}
           />
         </div>
