@@ -18,6 +18,8 @@ const AuthProvider = function (props) {
 
   useEffect(() => {
     onAuthStateChange();
+
+    return () => onAuthStateChange();
   }, []);
 
   return (
