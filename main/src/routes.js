@@ -1,11 +1,11 @@
+import React from "react";
+import { createBrowserRouter } from "react-router-dom";
+import Loading from "./component/Loading/Loading";
 import RootLayout from "./component/RootLayout/RootLayout";
-import AuthProvider from "./context/AuthContext";
 import Chat from "./pages/Chat/Chat";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
-
-import { createBrowserRouter } from "react-router-dom";
 
 export const routes = createBrowserRouter([
   {
@@ -20,9 +20,9 @@ export const routes = createBrowserRouter([
       {
         path: "chat",
         element: (
-          <AuthProvider>
+          <React.Suspense fallback={<Loading />}>
             <Chat />
-          </AuthProvider>
+          </React.Suspense>
         ),
       },
     ],
