@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
+import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
+import { doc, setDoc } from "firebase/firestore";
+import { auth, db, storage } from "../../config/firebase";
 import Swal from "sweetalert2";
 import Form from "../../component/Form/Form";
 import styles from "./Register.module.css";
-
-// import supabase from "./../../config/supabaseClient";
 
 export default function Register() {
   const [firstName, setFirstName] = useState("");
@@ -18,110 +20,40 @@ export default function Register() {
 
   const navigate = useNavigate();
 
-  // const userAuth = async function () {
-  //   const { data, error } = await supabase.auth.signUp({
-  //     email: email,
-  //     password: password,
-  //     options: {
-  //       data: {
-  //         fullName: `${firstName} ${lastName}`,
-  //         country: country,
-  //         gender: gender,
-  //         avatar: `https://puerxzgdqfjyvsizayzy.supabase.co/storage/v1/object/public/avatars/public/${file[0].name}`,
-  //       },
-  //     },
-  //   });
+  const registerHandler = async function (event) {
+    event.preventDefault();
 
-  //   if (data) {
-  //     Swal.fire({
-  //       icon: "success",
-  //       title: "Registration Completed",
-  //       text: "Please Check Your Email To Confirm",
-  //     });
-  //     navigate("/login");
-  //   }
-
-  //   console.log(data, error);
-  // };
-
-  // const createUserChats = async function (userId) {
-  //   const { data, error } = await supabase
-  //     .from("userChats")
-  //     .insert({
-  //       userId: userId,
-  //     })
-  //     .select();
-
-  //   if (data) {
-  //     console.log(data);
-  //   } else {
-  //     console.log(error);
-  //   }
-  // };
-
-  // const createUser = async function () {
-  //   const newUser = {
-  //     userId: crypto.randomUUID(),
-  //     fullName: `${firstName} ${lastName}`,
-  //     email: email,
-  //     password: password,
-  //     country: country,
-  //     gender: gender,
-  //     avatar: `https://puerxzgdqfjyvsizayzy.supabase.co/storage/v1/object/public/avatars/public/${file[0].name}`,
-  //   };
-
-  //   const { data, error } = await supabase
-  //     .from("users")
-  //     .insert(newUser)
-  //     .select();
-
-  //   createUserChats(newUser.userId);
-
-  //   if (data) {
-  //     console.log(data);
-  //   } else {
-  //     console.log(error);
-  //   }
-  // };
-
-  // const uploadAvatar = async function () {
-  //   const { data, error } = await supabase.storage
-  //     .from("avatars")
-  //     .upload(`public/${file[0].name}`, file[0], {
-  //       cacheControl: "3600",
-  //       upsert: false,
-  //     });
-
-  //   if (data) {
-  //     console.log(data);
-  //   } else {
-  //     console.log(error);
-  //   }
-  // };
-
-  // const registerHandler = function (e) {
-  //   e.preventDefault();
-  //   if (
-  //     !firstName.trim() ||
-  //     !lastName.trim() ||
-  //     !email.trim() ||
-  //     (!password.trim() && !cPassword.trim()) ||
-  //     !country.trim() ||
-  //     !gender.trim() ||
-  //     !file
-  //   ) {
-  //     Swal.fire("Please Complete All Fields");
-  //     return;
-  //   }
-  //   if (password !== cPassword) {
-  //     Swal.fire("Your Password Doesn't Match! Try Again.");
-  //     return;
-  //   }
-
-  //   userAuth();
-  //   createUser();
-  //   uploadAvatar();
-  // };
+    try {
+      const res = await createUserWithEmailAndPassword(auth, email, password);
+      const storageRef = ref(storage, "test");
+      const uploadTask = uploadBytesResumable(storageRef, file[0]);
+      uploadTask.on(
+        (error) => {
+          console.log(error);
+        },
+        () => {
+          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+            await updateProfile(res.user, {
+              displayName: firstName,
+              photoURL: downloadURL,
+            });
+            console.log("Successfully upload photo");
+            await setDoc(doc(db, "users", res.user.uid), {
+              uid: res.user.uid,
+              fullName: `${firstName} ${lastName}`,
+              email: email,
+              country: country,
+              gender: gender,
+              photoURL: downloadURL,
+            });
+            console.log("Successfully updated profile");
+          });
+        }
+      );
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   return (
     <Form>
@@ -218,11 +150,7 @@ export default function Register() {
           />
         </div>
       </div>
-      <button
-        type="submit"
-        className={styles.signUp}
-        onClick={"registerHandler"}
-      >
+      <button type="submit" className={styles.signUp} onClick={registerHandler}>
         Sign Up
       </button>
     </Form>

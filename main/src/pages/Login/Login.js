@@ -10,22 +10,6 @@ export default function Login() {
 
   const navigate = useNavigate();
 
-  // const loginHandler = async function (e) {
-  //   e.preventDefault();
-
-  //   const { data, error } = await supabase.auth.signInWithPassword({
-  //     email: email,
-  //     password: password,
-  //   });
-
-  //   if (data) {
-  //     console.log(data);
-  //     navigate("/chat");
-  //   } else {
-  //     console.log(error);
-  //   }
-  // };
-
   return (
     <Form>
       <input
