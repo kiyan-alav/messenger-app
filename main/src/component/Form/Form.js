@@ -9,7 +9,9 @@ export default function Form(props) {
       <ChatLogo />
       <ChatIntro />
       <div>
-        <form action="">{props.children}</form>
+        <form action="" onSubmit={(e) => props.onSubmit(e)}>
+          {props.children}
+        </form>
       </div>
     </main>
   );

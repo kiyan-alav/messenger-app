@@ -1,13 +1,23 @@
-import React from "react";
-import { createBrowserRouter } from "react-router-dom";
-import Loading from "./component/Loading/Loading";
+import React, { useContext } from "react";
+import { Navigate, createBrowserRouter } from "react-router-dom";
 import RootLayout from "./component/RootLayout/RootLayout";
 import Chat from "./pages/Chat/Chat";
 import Home from "./pages/Home/Home";
 import Login from "./pages/Login/Login";
 import Register from "./pages/Register/Register";
+import { AuthContext } from "./context/AuthContext";
 
-export const routes = createBrowserRouter([
+const ProtectedRoute = function ({ children }) {
+  const { currentUser } = useContext(AuthContext);
+
+  if (!currentUser) {
+    return <Navigate to="/login" />;
+  }
+
+  return children
+};
+
+const routes = createBrowserRouter([
   {
     path: "/",
     element: <RootLayout />,
@@ -16,15 +26,24 @@ export const routes = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "login", element: <Login /> },
       { path: "register", element: <Register /> },
-      // { path: "chat", element: <Chat /> },
       {
         path: "chat",
         element: (
-          <React.Suspense fallback={<Loading />}>
+          <ProtectedRoute>
             <Chat />
-          </React.Suspense>
+          </ProtectedRoute>
         ),
       },
+      // {
+      //   path: "chat",
+      //   element: (
+      //     <React.Suspense fallback={<Loading />}>
+      //       <Chat />
+      //     </React.Suspense>
+      //   ),
+      // },
     ],
   },
 ]);
+
+export { routes };

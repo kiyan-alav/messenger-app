@@ -1,16 +1,21 @@
 import React from "react";
 import styles from "./User.module.css";
 
-export default function User() {
+export default function User({
+  photoURL,
+  displayName,
+  lastMessage,
+  onHandleChatSelect,
+}) {
   return (
-    <article className={styles.recentUser}>
+    <article className={styles.recentUser} onClick={() => onHandleChatSelect()}>
       <div className={styles.userInfos}>
         <div className={styles.userProfile}>
-          <img src="./img/user-profile.png" alt="ax" />
+          <img src={photoURL} alt="ax" />
         </div>
         <div className={styles.userInfo}>
-          <h5>Kiyan Alavi</h5>
-          <p>Salam Khubi?</p>
+          <h5>{displayName}</h5>
+          <p>{lastMessage}</p>
         </div>
       </div>
       <div className={styles.time}>13:34</div>

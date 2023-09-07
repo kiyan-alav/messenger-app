@@ -3,17 +3,15 @@ import styles from "./UserProfile.module.css";
 import { AuthContext } from "../../context/AuthContext";
 
 export default function UserProfile() {
-  const currUserCtx = useContext(AuthContext);
-
-  console.log(currUserCtx);
+  const { currentUser } = useContext(AuthContext);
 
   return (
     <section className={styles.userProfileSection}>
       <article className={styles.mainInformation}>
         <div className={styles.userProfile}>
-          <img src={`${currUserCtx.user_metadata.avatar}`} alt="" />
+          <img src={`${currentUser.photoURL}`} alt="" />
         </div>
-        <p className={styles.fullName}>{currUserCtx.user_metadata.fullName}</p>
+        <p className={styles.fullName}>{currentUser.displayName}</p>
       </article>
       <article className={styles.otherInformation}>
         <h3>Personal Information</h3>
@@ -23,11 +21,11 @@ export default function UserProfile() {
         </div>
         <div className={styles.info}>
           <h4>Gender</h4>
-          <p>{currUserCtx.user_metadata.gender}</p>
+          <p>{"currentUser.user_metadata.gender"}</p>
         </div>
         <div className={styles.info}>
           <h4>Email</h4>
-          <p>{currUserCtx.email}</p>
+          <p>{currentUser.email}</p>
         </div>
       </article>
     </section>

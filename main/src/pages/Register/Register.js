@@ -4,13 +4,11 @@ import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
 import { auth, db, storage } from "../../config/firebase";
-import Swal from "sweetalert2";
 import Form from "../../component/Form/Form";
 import styles from "./Register.module.css";
 
 export default function Register() {
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [fullName, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [cPassword, setCPassword] = useState("");
@@ -24,57 +22,56 @@ export default function Register() {
     event.preventDefault();
 
     try {
+      //Create user
       const res = await createUserWithEmailAndPassword(auth, email, password);
-      const storageRef = ref(storage, "test");
-      const uploadTask = uploadBytesResumable(storageRef, file[0]);
-      uploadTask.on(
-        (error) => {
-          console.log(error);
-        },
-        () => {
-          getDownloadURL(uploadTask.snapshot.ref).then(async (downloadURL) => {
+
+      //Create a unique image name
+      const date = new Date().getTime();
+      const storageRef = ref(storage, `${fullName + date}`);
+
+      await uploadBytesResumable(storageRef, file).then(() => {
+        getDownloadURL(storageRef).then(async (downloadURL) => {
+          try {
+            //Update profile
             await updateProfile(res.user, {
-              displayName: firstName,
+              displayName: fullName,
               photoURL: downloadURL,
             });
-            console.log("Successfully upload photo");
+            //create user on firestore
             await setDoc(doc(db, "users", res.user.uid), {
               uid: res.user.uid,
-              fullName: `${firstName} ${lastName}`,
+              displayName: fullName,
               email: email,
+              password: password,
               country: country,
               gender: gender,
               photoURL: downloadURL,
             });
-            console.log("Successfully updated profile");
-          });
-        }
-      );
+
+            //create empty user chats on firestore
+            await setDoc(doc(db, "userChats", res.user.uid), {});
+            navigate("/");
+          } catch (err) {
+            console.log(err);
+          }
+        });
+      });
     } catch (err) {
       console.log(err);
     }
   };
 
   return (
-    <Form>
+    <Form onSubmit={registerHandler}>
       <input
         type="text"
-        placeholder="First Name"
-        name="first-name"
-        id="first-name"
+        placeholder="Full Name"
+        name="full-name"
+        id="full-name"
         autoFocus
         className={styles.registerInput}
-        onChange={(e) => setFirstName(e.target.value)}
-        value={firstName}
-      />
-      <input
-        type="text"
-        placeholder="Last Name"
-        name="last-name"
-        id="last-name"
-        className={styles.registerInput}
-        onChange={(e) => setLastName(e.target.value)}
-        value={lastName}
+        onChange={(e) => setFullName(e.target.value)}
+        value={fullName}
       />
       <input
         type="email"
@@ -119,11 +116,11 @@ export default function Register() {
           id="avatar"
           style={{ display: "none" }}
           name="avatar"
-          onChange={(e) => setFile(e.target.files)}
+          onChange={(e) => setFile(e.target.files[0])}
         />
         <label htmlFor="avatar">
           <img src="./img/addAvatar.jfif" alt="" />
-          <span>Add An Avatar</span>
+          <span>Add Avatar</span>
         </label>
       </div>
       <div className={styles.genderBox}>
@@ -150,7 +147,7 @@ export default function Register() {
           />
         </div>
       </div>
-      <button type="submit" className={styles.signUp} onClick={registerHandler}>
+      <button type="submit" className={styles.signUp}>
         Sign Up
       </button>
     </Form>
