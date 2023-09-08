@@ -1,9 +1,30 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import styles from "./UserProfile.module.css";
 import { AuthContext } from "../../context/AuthContext";
+import { doc, getDoc } from "firebase/firestore";
+import { db } from "../../config/firebase";
 
 export default function UserProfile() {
   const { currentUser } = useContext(AuthContext);
+  const [user, setUser] = useState([])
+
+  useEffect(() => {
+    const getUser = async function () {
+      const docRef = doc(db, "users", currentUser.uid);
+      const docSnap = await getDoc(docRef);
+
+      if (docSnap.exists()) {
+        setUser(docSnap.data());
+      } else {
+        // docSnap.data() will be undefined in this case
+        console.log("No such document!");
+      }
+    };
+
+    getUser()
+  }, [currentUser.uid]);
+
+  console.log(user)
 
   return (
     <section className={styles.userProfileSection}>
@@ -17,11 +38,11 @@ export default function UserProfile() {
         <h3>Personal Information</h3>
         <div className={styles.info}>
           <h4>Country</h4>
-          <p>Iran</p>
+          <p>{user.country}</p>
         </div>
         <div className={styles.info}>
           <h4>Gender</h4>
-          <p>{"currentUser.user_metadata.gender"}</p>
+          <p>{user.gender}</p>
         </div>
         <div className={styles.info}>
           <h4>Email</h4>
