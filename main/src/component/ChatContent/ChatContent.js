@@ -67,20 +67,20 @@ export default function ChatContent() {
           </div>
           <div className={styles.userInfo}>
             <h5>{data.user?.displayName}</h5>
-            <p>Online</p>
+            {/* <p>Online</p> */}
           </div>
         </div>
         <button className={styles.back} onClick={() => signOut(auth)}>
           Logout
         </button>
-        <div className={styles.chatIcon}>
+        {/* <div className={styles.chatIcon}>
           <button>
             <i className="fas fa-phone-alt"></i>
           </button>
           <button>
             <i className="fas fa-video"></i>
           </button>
-        </div>
+        </div> */}
       </article>
       <article className={styles.userChats}>
         {messages.map((msg) => (
@@ -88,9 +88,9 @@ export default function ChatContent() {
         ))}
       </article>
       <article className={styles.inputBox}>
-        <button className={styles.messageIcon}>
+        {/* <button className={styles.messageIcon}>
           <i className="fas fa-plus"></i>
-        </button>
+        </button> */}
         <form action="" className={styles.messageForm}>
           <input
             type="text"

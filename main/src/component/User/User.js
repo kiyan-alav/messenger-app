@@ -8,7 +8,6 @@ export default function User({
   onHandleChatSelect,
   date,
 }) {
-  console.log(date)
 
   return (
     <article className={styles.recentUser} onClick={() => onHandleChatSelect()}>

@@ -77,3 +77,15 @@ Register Page
   color: var(--white);
   font-size: 1.2rem;
 }
+
+.registerLogin p {
+  color: var(--clr-grey-4);
+  font-size: 1rem;
+  text-align: center;
+}
+
+.registerLogin a {
+  color: var(--white);
+  text-decoration: underline;
+  font-weight: 700;
+}

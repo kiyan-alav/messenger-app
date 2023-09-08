@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { ref, uploadBytesResumable, getDownloadURL } from "firebase/storage";
 import { doc, setDoc } from "firebase/firestore";
@@ -65,7 +65,7 @@ export default function Register() {
     <Form onSubmit={registerHandler}>
       <input
         type="text"
-        placeholder="Full Name"
+        placeholder="Name"
         name="full-name"
         id="full-name"
         autoFocus
@@ -120,7 +120,7 @@ export default function Register() {
         />
         <label htmlFor="avatar">
           <img src="./img/addAvatar.jfif" alt="" />
-          <span>Add Avatar</span>
+          <span>{file ? file.name : "Add An Avatar"}</span>
         </label>
       </div>
       <div className={styles.genderBox}>
@@ -150,6 +150,18 @@ export default function Register() {
       <button type="submit" className={styles.signUp}>
         Sign Up
       </button>
+      <div className={styles.registerLogin}>
+        <p>
+          Already have an account?{" "}
+          <Link to="/login">
+            Login
+          </Link>{" "}
+          or{" "}
+          <Link to="/">
+            Back to home
+          </Link>
+        </p>
+      </div>
     </Form>
   );
 }

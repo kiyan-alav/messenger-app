@@ -85,7 +85,6 @@ export default function UsersList() {
           [combinedId + ".date"]: serverTimestamp(),
         });
       }
-      console.log(chats)
       dispatch({ type: "CHANGE_USER", payload: u });
     } catch (error) {
       console.log(error);
@@ -108,7 +107,7 @@ export default function UsersList() {
             type="text"
             name="search"
             id="search"
-            placeholder="Search For User Full Name..."
+            placeholder="Search User..."
             onChange={(e) => setUserName(e.target.value)}
             onKeyDown={handleKey}
             value={userName}

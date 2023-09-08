@@ -24,7 +24,6 @@ export default function UserProfile() {
     getUser()
   }, [currentUser.uid]);
 
-  console.log(user)
 
   return (
     <section className={styles.userProfileSection}>

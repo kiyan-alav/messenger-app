@@ -33,3 +33,15 @@
   color: var(--clr-primary-1);
   font-weight: 700;
 }
+
+.registerLogin p {
+  color: var(--clr-grey-4);
+  font-size: 1rem;
+  text-align: center;
+}
+
+.registerLogin a {
+  color: var(--white);
+  text-decoration: underline;
+  font-weight: 700;
+}
