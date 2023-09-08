@@ -20,7 +20,6 @@ import { ChatContext } from "../../context/ChatContext";
 export default function UsersList() {
   const [userName, setUserName] = useState("");
   const [user, setUser] = useState(null);
-  // const [error, setError] = useState(false);
   const [chats, setChats] = useState([]);
 
   const { currentUser } = useContext(AuthContext);
@@ -147,6 +146,7 @@ export default function UsersList() {
             photoURL={chat[1].userInfo.photoURL}
             displayName={chat[1].userInfo.displayName}
             lastMessage={chat[1].lastMessage?.text}
+            date={chat[1].date?.seconds}
             onHandleChatSelect={() => handleChatSelect(chat[1].userInfo)}
           />
         ))}

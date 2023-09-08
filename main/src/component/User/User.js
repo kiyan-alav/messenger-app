@@ -6,7 +6,10 @@ export default function User({
   displayName,
   lastMessage,
   onHandleChatSelect,
+  date,
 }) {
+  console.log(date)
+
   return (
     <article className={styles.recentUser} onClick={() => onHandleChatSelect()}>
       <div className={styles.userInfos}>
@@ -18,7 +21,7 @@ export default function User({
           <p>{lastMessage}</p>
         </div>
       </div>
-      <div className={styles.time}>13:34</div>
+      <div className={styles.time}>{new Date(date * 1000).toString().slice(16, 21)}</div>
     </article>
   );
 }
