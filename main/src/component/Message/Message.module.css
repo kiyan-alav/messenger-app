@@ -1,4 +1,4 @@
-.userProfile {
+.userProfile img {
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
@@ -28,6 +28,11 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+}
+
+.ownerSide:not(:first-child),
+.oppositeSide:not(:first-child) {
+  margin-top: 1rem;
 }
 
 .ownerSide {
