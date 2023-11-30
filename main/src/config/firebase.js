@@ -4,8 +4,8 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBzlfwbXRtu2Ex9ZAv4FLrEoCUIgRpUlo8",
-  authDomain: "messenger-3c98b.firebaseapp.com",
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_API_URL",
   projectId: "messenger-3c98b",
   storageBucket: "messenger-3c98b.appspot.com",
   messagingSenderId: "406563576823",
