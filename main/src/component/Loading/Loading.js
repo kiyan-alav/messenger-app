@@ -1,11 +1,17 @@
-import React from "react";
-import styles from "./Loading.module.css";
+import React from 'react';
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
+import Button from '@mui/material/Button';
 
-export default function Loading() {
-  return (
-    <div className={styles.loadingContainer}>
-      <img src="./img/ring-resize.svg" alt="" />
-      <h3>Loading...</h3>
-    </div>
-  );
+export default function Loading({open}) {
+    return (
+        <div>
+            <Backdrop
+                sx={{ color: '#fff', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                open={open}
+            >
+                <CircularProgress color="inherit" />
+            </Backdrop>
+        </div>
+    );
 }
